@@ -20,10 +20,12 @@ Interfaz principal que lista las categorías creadas. El botón "Editar" permite
 
 ### 2. Gestión de Tareas (Detalle)
 Pantalla secundaria que recupera el identificador de la categoría seleccionada y despliega su listado de tareas pendientes o completadas.
+
 <img width="278" height="646" alt="TareasCategoria" src="https://github.com/user-attachments/assets/4cd3226b-a0d2-4e8d-9691-4266dbc399fe" />
 
 ### 3. Gestión de Tareas Globales
 Pantalla que muestra todas las tareas de todas las categorías de forma global.
+
 <img width="278" height="646" alt="Tareas-Globales" src="https://github.com/user-attachments/assets/c27898f8-b67b-4393-903d-039a3ff6735f" />
 
 ---
