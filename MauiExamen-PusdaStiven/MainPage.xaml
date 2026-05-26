@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MauiExamen_PusdaStiven.Models"
+             x:Class="MauiExamen_PusdaStiven.MainPage"
+             Title="Categorías">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="15">
+
+            <Label Text="Grupos de Trabajo" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold" />
+
+            <Entry x:Name="txtCategoria" Placeholder="Nombre de la nueva categoría" />
+
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Button x:Name="btnGuardarCat" 
+                        Text="Guardar" 
+                        Clicked="OnGuardarCategoriaClicked" 
+                        BackgroundColor="#512BD4" 
+                        TextColor="White" 
+                        WidthRequest="140" />
+
+                <Button Text="Limpiar" 
+                        Clicked="OnLimpiarClicked" 
+                        BackgroundColor="Gray" 
+                        TextColor="White" 
+                        WidthRequest="100" />
+            </HorizontalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" />
+
+            <CollectionView x:Name="lstCategorias" SelectionMode="None">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="models:Categoria">
+                        <Border Margin="0,5" Padding="15" BackgroundColor="#1e1e1e" Stroke="#333">
+
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="OnCategoriaTapped" CommandParameter="{Binding .}" />
+                            </Border.GestureRecognizers>
+
+                            <Grid ColumnDefinitions="*, Auto, Auto" ColumnSpacing="10">
+
+                                <Label Grid.Column="0" 
+                           Text="{Binding Nombre}" 
+                           FontAttributes="Bold" 
+                           FontSize="18" 
+                           TextColor="White" 
+                           VerticalOptions="Center" />
+
+                                <Button Grid.Column="1" 
+                            Text="Editar" 
+                            BackgroundColor="#007ACC" 
+                            TextColor="White" 
+                            HeightRequest="40" 
+                            Clicked="OnEditarCategoriaClicked" 
+                            CommandParameter="{Binding .}" />
+
+                                <Button Grid.Column="2" 
+                            Text="Borrar" 
+                            BackgroundColor="#D32F2F" 
+                            TextColor="White" 
+                            HeightRequest="40" 
+                            Clicked="OnBorrarCategoriaClicked" 
+                            CommandParameter="{Binding .}" />
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
