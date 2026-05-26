@@ -33,5 +33,5 @@ Pantalla que muestra todas las tareas de todas las categorías de forma global.
 ## 🛠️ Stack Tecnológico
 - **Framework:** .NET MAUI
 - **Base de Datos:** SQLite
-- **Lenguaje de Programación:** C# / XAML
+- **Lenguaje de Programación:** C#
 - **Entorno de Desarrollo:** Visual Studio
